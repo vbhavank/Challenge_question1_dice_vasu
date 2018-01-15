@@ -45,7 +45,7 @@ int main()
 
 //Reading the image dice1.png(modify according to requirement)
  cv::Mat image=cv::imread("/home/bxv7657/NASCENT/diced/im/dice6.png");
-//Detecting the canny edges for isolating edges
+//Detecting the canny edges for isolating edges: Helps removing the wood baground
  cv::Canny( image, ca, 200, 200*5, 3 );
 
  int erosion_size = 35;  
@@ -55,7 +55,7 @@ int main()
 dilate(ca,dst,element);        
 erode(dst,ca,element); 
 int tot=0;
-// Finding Contours helps us isolate individual dice+pips
+// Finding Contours helps us obtain co-ordinates of individual dice+pips
 cv::findContours( ca,conto, hirer,CV_RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 //Iterate through all contours(including dice and pips)
 for(int i=0; i<conto.size(); i++)
@@ -94,7 +94,7 @@ if(src_gray > 0)
 
     }
 // Total dice value in the image
-   ttext << "Sum:" << tot;\
+   ttext << "Sum:" << tot;
 // Draw the total value on the image
    cv::putText(image,ttext.str(),cv::Point(100,100),cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar::all(255), 1, 8);
 // Displaying final image
@@ -103,7 +103,7 @@ if(src_gray > 0)
     cv::waitKey(0);
 //std::cout << "Number of pips :" << tot<< std::endl;
 // Writing the final image 'Result_dice1.png'
-   cv::imwrite( "/home/bxv7657/NASCENT/diced/im/Result_dice6.png", image);
+   cv::imwrite( "/home/bxv7657/NASCENT/diced/im/Result_dice1.png", image);
   
 }
   
