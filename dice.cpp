@@ -1,3 +1,10 @@
+/**Code to detect pips in a dice using c++ and opencv 
+Author:Bhavan Vasu,
+Graduate research assistant,
+Real time and computer vision lab,
+Rochester Institute of technology,New york-14623
+email:bxv7657@rit.edu**/
+
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
