@@ -1,4 +1,4 @@
-#Challenge1_solution_vasu
+# Detecting dots in dice using opencv and c++
 
  Author: Bhavan Vasu
  Graduate Research Assistant,
