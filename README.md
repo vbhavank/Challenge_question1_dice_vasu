@@ -16,7 +16,7 @@
  To run the pips detection algorithm
  in you command window :
 
- $ g++ -o test_1 dice.cpp `pkg-config opencv --cflags --libs`
+ $ g++ -o test_1 dice.cpp `'pkg-config opencv --cflags --libs'`
 
  `$./test_1`
 
